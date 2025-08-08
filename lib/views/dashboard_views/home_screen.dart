@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pooleng/utils/app_colors.dart';
+import 'package:pooleng/views/setting_views/setting_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -79,9 +80,14 @@ class HomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Image.asset('assets/images/grid.png', scale: 4),
-                      CircleAvatar(
-                        backgroundColor: Colors.white,
-                        child: Icon(Icons.settings, color: Colors.black),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsScreen(),));
+                        },
+                        child: CircleAvatar(
+                          backgroundColor: Colors.white,
+                          child: Icon(Icons.settings, color: Colors.black),
+                        ),
                       ),
                     ],
                   ),
